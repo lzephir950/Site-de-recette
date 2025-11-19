@@ -32,6 +32,8 @@ if($valid){
   $stmt=$pdo->prepare('INSERT INTO recipes(title, recipe, email) VALUES (?,?,?)');
   $stmt->execute($tableau);
   
+  $_SESSION['MESSAGE_SUCCESS']="Recette enregistré avec succès !";
+  var_dump($_SESSION['MESSAGE_SUCCESS']);
   header('Location: home.php');
   exit;
 }
